@@ -197,6 +197,7 @@ a:focus {
     scroll-behavior: smooth;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE/Edge */
+    min-height: 320px; /* Ensure minimum height */
 }
 
 .certificate-container::-webkit-scrollbar {
@@ -208,6 +209,9 @@ a:focus {
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 1rem;
+    background: rgba(31, 41, 55, 0.5);
 }
 
 .certificate-card:hover {
@@ -233,9 +237,10 @@ a:focus {
 .certificate-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.3s ease;
     background: white;
+    display: block;
 }
 
 .certificate-card:hover .certificate-image {
