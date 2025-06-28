@@ -128,11 +128,44 @@ html {
     @apply opacity-75 cursor-not-allowed;
 }
 
-/* Responsive typography */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .floating-cube {
         width: 40px;
         height: 40px;
+    }
+    
+    /* Hero section mobile adjustments */
+    .hero-text {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+    
+    .hero-intro {
+        font-size: 1rem !important;
+        padding: 1.5rem !important;
+    }
+    
+    /* Button adjustments */
+    .btn-primary, .btn-secondary {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.875rem !important;
+    }
+    
+    /* Section spacing */
+    .section-padding {
+        padding: 3rem 0 !important;
+    }
+    
+    /* Contact info mobile layout */
+    .contact-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+    }
+    
+    .contact-icon {
+        margin: 0 auto !important;
     }
 }
 
@@ -359,14 +392,14 @@ a:focus {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive adjustments */
+/* Mobile Adjustments for Certificates */
 @media (max-width: 768px) {
     .certificate-card {
         flex: 0 0 280px;
     }
     
     .certificate-image-wrapper {
-        height: 200px;
+        height: 180px;
     }
     
     .certificate-overlay {
@@ -374,12 +407,55 @@ a:focus {
     }
     
     .overlay-content h3 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .nav-btn {
         width: 40px;
         height: 40px;
         font-size: 1rem;
+    }
+    
+    /* Better mobile navigation */
+    .certificate-container {
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .certificate-card {
+        flex: 0 0 250px;
+    }
+    
+    .certificate-image-wrapper {
+        height: 160px;
+    }
+    
+    /* Hero section for very small devices */
+    .hero-text {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-intro {
+        font-size: 0.9rem !important;
+        padding: 1rem !important;
+    }
+    
+    /* Project cards mobile */
+    .project-card {
+        margin-bottom: 1rem;
+    }
+    
+    /* Skills section mobile */
+    .skill-category {
+        padding: 1rem !important;
+    }
+    
+    /* Mobile navigation improvements */
+    #mobile-menu {
+        max-height: 300px;
+        overflow-y: auto;
     }
 }

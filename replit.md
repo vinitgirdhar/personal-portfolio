@@ -125,6 +125,8 @@ The application is built as a single-page Flask web application with a focus on 
 - June 28, 2025. Added comprehensive Certificates section with interactive gallery featuring hover zoom, horizontal scrolling, and modal view
 - June 28, 2025. Updated branding to "VG.dev", added real contact links (LinkedIn: www.linkedin.com/in/vinit-girdhar, GitHub: https://github.com/vinitgirdhar, Email: girdharvinit786@gmail.com)
 - June 28, 2025. Removed contact form, simplified contact section to display information only, removed Flask/Tailwind CSS footer attribution
+- June 28, 2025. Updated "Get In Touch" button to "My Resume" with download icon (link to be added later)
+- June 28, 2025. Implemented comprehensive mobile responsiveness: optimized typography, spacing, touch targets, and layouts for mobile/tablet devices. Added responsive breakpoints for small (480px), medium (768px), and large screens
 
 ## User Preferences
 
