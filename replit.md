@@ -121,6 +121,10 @@ The application is built as a single-page Flask web application with a focus on 
 
 ## Changelog
 - June 28, 2025. Initial setup
+- June 28, 2025. Updated layout: moved "Transform Ideas" to left, intro to right, removed profile photo from About section
+- June 28, 2025. Added comprehensive Certificates section with interactive gallery featuring hover zoom, horizontal scrolling, and modal view
+- June 28, 2025. Updated branding to "VG.dev", added real contact links (LinkedIn: www.linkedin.com/in/vinit-girdhar, GitHub: https://github.com/vinitgirdhar, Email: girdharvinit786@gmail.com)
+- June 28, 2025. Removed contact form, simplified contact section to display information only, removed Flask/Tailwind CSS footer attribution
 
 ## User Preferences
 

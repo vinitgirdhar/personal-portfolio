@@ -25,44 +25,7 @@ def index():
     """Main portfolio page"""
     return render_template('index.html')
 
-@app.route('/contact', methods=['POST'])
-def contact():
-    """Handle contact form submission"""
-    try:
-        name = request.form.get('name')
-        email = request.form.get('email')
-        subject = request.form.get('subject')
-        message = request.form.get('message')
-        
-        if not all([name, email, subject, message]):
-            flash('Please fill in all fields.', 'error')
-            return redirect(url_for('index') + '#contact')
-        
-        # Create and send email
-        msg = Message(
-            subject=f"Portfolio Contact: {subject}",
-            recipients=[app.config['MAIL_DEFAULT_SENDER']],
-            body=f"""
-New contact form submission:
 
-Name: {name}
-Email: {email}
-Subject: {subject}
-
-Message:
-{message}
-            """,
-            reply_to=email
-        )
-        
-        mail.send(msg)
-        flash('Thank you for your message! I will get back to you soon.', 'success')
-        
-    except Exception as e:
-        app.logger.error(f"Error sending email: {e}")
-        flash('Sorry, there was an error sending your message. Please try again later.', 'error')
-    
-    return redirect(url_for('index') + '#contact')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
