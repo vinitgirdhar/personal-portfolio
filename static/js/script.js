@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initContactForm();
     initIntersectionObserver();
+    initCertificateGallery();
 });
 
 // Mobile menu functionality
@@ -319,6 +320,144 @@ window.addEventListener('error', function(e) {
 function trackEvent(action, category, label) {
     // Integration point for Google Analytics or other tracking
     console.log('Event tracked:', { action, category, label });
+}
+
+// Certificate Gallery functionality
+function initCertificateGallery() {
+    const container = document.querySelector('.certificate-container');
+    const prevBtn = document.getElementById('cert-prev');
+    const nextBtn = document.getElementById('cert-next');
+    const certificates = document.querySelectorAll('.certificate-card');
+    
+    if (!container || !prevBtn || !nextBtn) return;
+    
+    const cardWidth = 400 + 32; // card width + gap
+    let currentIndex = 0;
+    const maxIndex = Math.max(0, certificates.length - Math.floor(container.clientWidth / cardWidth));
+    
+    // Update navigation buttons state
+    function updateNavButtons() {
+        prevBtn.disabled = currentIndex <= 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+    }
+    
+    // Scroll to specific index
+    function scrollToIndex(index) {
+        const scrollLeft = index * cardWidth;
+        container.scrollTo({
+            left: scrollLeft,
+            behavior: 'smooth'
+        });
+        currentIndex = index;
+        updateNavButtons();
+    }
+    
+    // Previous button
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            scrollToIndex(currentIndex - 1);
+        }
+    });
+    
+    // Next button
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+            scrollToIndex(currentIndex + 1);
+        }
+    });
+    
+    // Touch/mouse wheel scrolling
+    let isScrolling = false;
+    container.addEventListener('wheel', (e) => {
+        if (isScrolling) return;
+        isScrolling = true;
+        
+        e.preventDefault();
+        if (e.deltaY > 0 && currentIndex < maxIndex) {
+            scrollToIndex(currentIndex + 1);
+        } else if (e.deltaY < 0 && currentIndex > 0) {
+            scrollToIndex(currentIndex - 1);
+        }
+        
+        setTimeout(() => { isScrolling = false; }, 500);
+    });
+    
+    // Handle manual scrolling
+    container.addEventListener('scroll', throttle(() => {
+        const scrollLeft = container.scrollLeft;
+        const newIndex = Math.round(scrollLeft / cardWidth);
+        if (newIndex !== currentIndex) {
+            currentIndex = newIndex;
+            updateNavButtons();
+        }
+    }, 100));
+    
+    // Certificate click for full view modal
+    certificates.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            openCertificateModal(card.querySelector('.certificate-image'));
+        });
+    });
+    
+    // Initialize
+    updateNavButtons();
+    
+    // Handle window resize
+    window.addEventListener('resize', throttle(() => {
+        const newMaxIndex = Math.max(0, certificates.length - Math.floor(container.clientWidth / cardWidth));
+        if (currentIndex > newMaxIndex) {
+            scrollToIndex(newMaxIndex);
+        }
+        updateNavButtons();
+    }, 250));
+}
+
+// Certificate Modal functionality
+function openCertificateModal(imgElement) {
+    // Create modal if it doesn't exist
+    let modal = document.querySelector('.certificate-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.className = 'certificate-modal';
+        modal.innerHTML = `
+            <div class="certificate-modal-content">
+                <button class="certificate-modal-close">&times;</button>
+                <img src="" alt="Certificate">
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        // Close modal events
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeCertificateModal();
+            }
+        });
+        
+        modal.querySelector('.certificate-modal-close').addEventListener('click', closeCertificateModal);
+        
+        // ESC key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeCertificateModal();
+            }
+        });
+    }
+    
+    // Set image and show modal
+    const modalImg = modal.querySelector('img');
+    modalImg.src = imgElement.src;
+    modalImg.alt = imgElement.alt;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertificateModal() {
+    const modal = document.querySelector('.certificate-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
 // Add event tracking to important interactions

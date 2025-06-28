@@ -48,6 +48,7 @@
                     <a href="#about" class="nav-link text-gray-300 hover:text-white transition-colors">About</a>
                     <a href="#projects" class="nav-link text-gray-300 hover:text-white transition-colors">Projects</a>
                     <a href="#skills" class="nav-link text-gray-300 hover:text-white transition-colors">Skills</a>
+                    <a href="#certificates" class="nav-link text-gray-300 hover:text-white transition-colors">Certificates</a>
                     <a href="#contact" class="nav-link text-gray-300 hover:text-white transition-colors">Contact</a>
                 </div>
                 <div class="md:hidden">
@@ -64,6 +65,7 @@
                 <a href="#about" class="block text-gray-300 hover:text-white py-2">About</a>
                 <a href="#projects" class="block text-gray-300 hover:text-white py-2">Projects</a>
                 <a href="#skills" class="block text-gray-300 hover:text-white py-2">Skills</a>
+                <a href="#certificates" class="block text-gray-300 hover:text-white py-2">Certificates</a>
                 <a href="#contact" class="block text-gray-300 hover:text-white py-2">Contact</a>
             </div>
         </div>
@@ -76,42 +78,55 @@
 
     <!-- Home Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-            <div class="space-y-8">
-                <!-- Profile Badge -->
-                <div class="inline-flex items-center px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-medium">
-                    <i class="fas fa-code mr-2"></i>
-                    Full Stack Developer
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side - Transform Ideas -->
+                <div class="text-left">
+                    <!-- Profile Badge -->
+                    <div class="inline-flex items-center px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-medium mb-8">
+                        <i class="fas fa-code mr-2"></i>
+                        Full Stack Developer
+                    </div>
+                    
+                    <!-- Main Heading -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+                        <span class="text-white">Transforming Ideas into</span><br>
+                        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Intelligent</span>
+                        <span class="text-white">,</span><br>
+                        <span class="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">Scalable</span>
+                        <span class="text-white">&</span><br>
+                        <span class="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">Decentralized</span><br>
+                        <span class="text-white">Web Realities</span>
+                    </h1>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#projects" class="btn-primary group">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            View My Projects
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#contact" class="btn-secondary group">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Get In Touch
+                            <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
                 
-                <!-- Main Heading -->
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                    <span class="text-white">Transforming Ideas into</span><br>
-                    <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Intelligent</span>
-                    <span class="text-white">,</span>
-                    <span class="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">Scalable</span>
-                    <span class="text-white">&</span><br>
-                    <span class="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">Decentralized</span>
-                    <span class="text-white">Web Realities</span>
-                </h1>
-                
-                <!-- Tagline -->
-                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    Hi, I'm <span class="text-white font-semibold">Vinit Girdhar</span> — Web Developer with Full stack passionate about building intelligent, scalable, and decentralized solutions. I specialize in end-to-end development using <span class="text-primary">Java</span>, <span class="text-secondary">Python</span>, <span class="text-accent">C++</span>, <span class="text-primary">SQL</span> and <span class="text-secondary">MongoDB</span>, with a focus on AI-driven systems and modern cloud architecture.
-                </p>
-                
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#projects" class="btn-primary group">
-                        <i class="fas fa-briefcase mr-2"></i>
-                        View My Projects
-                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#contact" class="btn-secondary group">
-                        <i class="fas fa-envelope mr-2"></i>
-                        Get In Touch
-                        <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
+                <!-- Right Side - Introduction -->
+                <div class="text-left lg:text-left">
+                    <div class="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-white">Hi, I'm Vinit Girdhar</h2>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+                            Web Developer with Full stack passionate about building intelligent, scalable, and decentralized solutions. I specialize in end-to-end development using <span class="text-primary font-medium">Java</span>, <span class="text-secondary font-medium">Python</span>, <span class="text-accent font-medium">C++</span>, <span class="text-primary font-medium">SQL</span> and <span class="text-secondary font-medium">MongoDB</span>, with a focus on AI-driven systems and modern cloud architecture.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">AI Systems</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Cloud Architecture</span>
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Full Stack</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,23 +140,9 @@
                 <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Profile Image -->
-                <div class="text-center lg:text-left">
-                    <div class="relative inline-block">
-                        <div class="w-80 h-80 mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 p-1">
-                            <div class="w-full h-full rounded-xl bg-gray-800 flex items-center justify-center">
-                                <img src="{{ url_for('static', filename='images/profile.svg') }}" alt="Vinit Girdhar" class="w-64 h-64 object-cover rounded-xl">
-                            </div>
-                        </div>
-                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
-                            <i class="fas fa-code text-white text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-                
+            <div class="max-w-4xl mx-auto">
                 <!-- About Content -->
-                <div class="space-y-6">
+                <div class="space-y-8">
                     <div class="space-y-4">
                         <h3 class="text-2xl font-semibold text-white">Full Stack Developer & Tech Enthusiast</h3>
                         <p class="text-gray-300 text-lg leading-relaxed">
@@ -385,6 +386,149 @@
                             <p class="text-white font-medium">Decentralized Solutions</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Certificates & Achievements</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Professional certifications and course completions showcasing continuous learning and skill development
+                </p>
+            </div>
+            
+            <!-- Certificate Gallery -->
+            <div class="certificate-gallery">
+                <div class="certificate-container">
+                    <!-- Infosys OpenAI GPT4 Certificate -->
+                    <div class="certificate-card group">
+                        <div class="certificate-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/certificates/infosys-gpt4.jpg') }}" 
+                                 alt="Infosys OpenAI GPT4 Certificate" 
+                                 class="certificate-image">
+                            <div class="certificate-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="text-xl font-bold text-white mb-2">Introduction to OpenAI GPT4</h3>
+                                    <p class="text-gray-300 mb-4">Infosys Springboard • May 2025</p>
+                                    <div class="flex space-x-2">
+                                        <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">AI</span>
+                                        <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">OpenAI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- MERN Stack Certificate -->
+                    <div class="certificate-card group">
+                        <div class="certificate-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/certificates/mern-stack.jpg') }}" 
+                                 alt="MERN Stack Certificate" 
+                                 class="certificate-image">
+                            <div class="certificate-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="text-xl font-bold text-white mb-2">MERN Stack Web Development</h3>
+                                    <p class="text-gray-300 mb-4">TechBairn Research • October 2024</p>
+                                    <div class="flex space-x-2">
+                                        <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">React</span>
+                                        <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Node.js</span>
+                                        <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">MongoDB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- JP Morgan Job Simulation -->
+                    <div class="certificate-card group">
+                        <div class="certificate-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/certificates/jpmorgan-sim.jpg') }}" 
+                                 alt="JP Morgan Job Simulation Certificate" 
+                                 class="certificate-image">
+                            <div class="certificate-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="text-xl font-bold text-white mb-2">Software Engineering Job Simulation</h3>
+                                    <p class="text-gray-300 mb-4">JP Morgan Chase & Co. • July 2024</p>
+                                    <div class="flex space-x-2">
+                                        <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Finance</span>
+                                        <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Trading</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Infosys Ethical AI Certificate -->
+                    <div class="certificate-card group">
+                        <div class="certificate-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/certificates/infosys-ethical-ai.jpg') }}" 
+                                 alt="Infosys Ethical AI Certificate" 
+                                 class="certificate-image">
+                            <div class="certificate-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="text-xl font-bold text-white mb-2">Ethical AI</h3>
+                                    <p class="text-gray-300 mb-4">Infosys Springboard • May 2025</p>
+                                    <div class="flex space-x-2">
+                                        <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">AI Ethics</span>
+                                        <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Technology</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Infosys Networking Certificate -->
+                    <div class="certificate-card group">
+                        <div class="certificate-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/certificates/infosys-networking.jpg') }}" 
+                                 alt="Infosys Networking Certificate" 
+                                 class="certificate-image">
+                            <div class="certificate-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="text-xl font-bold text-white mb-2">Networking and Web Technology</h3>
+                                    <p class="text-gray-300 mb-4">Infosys Springboard • June 2025</p>
+                                    <div class="flex space-x-2">
+                                        <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Networking</span>
+                                        <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Web Tech</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Infosys Cybersecurity Certificate -->
+                    <div class="certificate-card group">
+                        <div class="certificate-image-wrapper">
+                            <img src="{{ url_for('static', filename='images/certificates/infosys-cybersecurity.jpg') }}" 
+                                 alt="Infosys Cybersecurity Certificate" 
+                                 class="certificate-image">
+                            <div class="certificate-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="text-xl font-bold text-white mb-2">Introduction to Cyber Security</h3>
+                                    <p class="text-gray-300 mb-4">Infosys Springboard • June 2025</p>
+                                    <div class="flex space-x-2">
+                                        <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Security</span>
+                                        <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Privacy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <div class="certificate-nav">
+                    <button id="cert-prev" class="nav-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="cert-next" class="nav-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
