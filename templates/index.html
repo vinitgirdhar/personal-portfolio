@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinit Girdhar - Full Stack Developer</title>
+    <meta name="description" content="Vinit Girdhar - Full Stack Web Developer specializing in intelligent, scalable, and decentralized solutions using Java, Python, C++, SQL, and MongoDB.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#6366f1',
+                        'secondary': '#8b5cf6',
+                        'accent': '#06b6d4',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-white">
+                    Vinit Girdhar
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-white transition-colors">Projects</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-white transition-colors">Skills</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block text-gray-300 hover:text-white py-2">Home</a>
+                <a href="#about" class="block text-gray-300 hover:text-white py-2">About</a>
+                <a href="#projects" class="block text-gray-300 hover:text-white py-2">Projects</a>
+                <a href="#skills" class="block text-gray-300 hover:text-white py-2">Skills</a>
+                <a href="#contact" class="block text-gray-300 hover:text-white py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div id="animated-bg"></div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <div class="space-y-8">
+                <!-- Profile Badge -->
+                <div class="inline-flex items-center px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-medium">
+                    <i class="fas fa-code mr-2"></i>
+                    Full Stack Developer
+                </div>
+                
+                <!-- Main Heading -->
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                    <span class="text-white">Transforming Ideas into</span><br>
+                    <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Intelligent</span>
+                    <span class="text-white">,</span>
+                    <span class="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">Scalable</span>
+                    <span class="text-white">&</span><br>
+                    <span class="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">Decentralized</span>
+                    <span class="text-white">Web Realities</span>
+                </h1>
+                
+                <!-- Tagline -->
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Hi, I'm <span class="text-white font-semibold">Vinit Girdhar</span> — Web Developer with Full stack passionate about building intelligent, scalable, and decentralized solutions. I specialize in end-to-end development using <span class="text-primary">Java</span>, <span class="text-secondary">Python</span>, <span class="text-accent">C++</span>, <span class="text-primary">SQL</span> and <span class="text-secondary">MongoDB</span>, with a focus on AI-driven systems and modern cloud architecture.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" class="btn-primary group">
+                        <i class="fas fa-briefcase mr-2"></i>
+                        View My Projects
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contact" class="btn-secondary group">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Get In Touch
+                        <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Profile Image -->
+                <div class="text-center lg:text-left">
+                    <div class="relative inline-block">
+                        <div class="w-80 h-80 mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 p-1">
+                            <div class="w-full h-full rounded-xl bg-gray-800 flex items-center justify-center">
+                                <img src="{{ url_for('static', filename='images/profile.svg') }}" alt="Vinit Girdhar" class="w-64 h-64 object-cover rounded-xl">
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- About Content -->
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-semibold text-white">Full Stack Developer & Tech Enthusiast</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Hi, I'm Vinit Girdhar — Web Developer with Full stack passionate about building intelligent, scalable, and decentralized solutions. I specialize in end-to-end development using Java, Python, C++, SQL and MONGODB, with a focus on AI-driven systems and modern cloud architecture.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            As a proactive and passionate developer, I'm dedicated to creating innovative solutions that push the boundaries of what's possible in web development. My commitment to continuous learning and excellence drives me to explore new technologies and methodologies.
+                        </p>
+                    </div>
+                    
+                    <!-- Education -->
+                    <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+                        <h4 class="text-xl font-semibold mb-4 text-white flex items-center">
+                            <i class="fas fa-graduation-cap mr-3 text-primary"></i>
+                            Education
+                        </h4>
+                        <div class="space-y-2">
+                            <p class="text-white font-medium">Bachelor of Technology (B.Tech)</p>
+                            <p class="text-gray-300">St. Francis Institute of Technology (SFIT), Mumbai</p>
+                            <p class="text-gray-400">Currently in 3rd Year • Expected Graduation: 2027</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Explore my latest work showcasing innovative solutions and cutting-edge technologies
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- FitNote Project -->
+                <div class="project-card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-primary/50 transition-all duration-300 group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-dumbbell text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">FitNote</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            An intuitive application designed for fitness enthusiasts to meticulously track their gym workouts, including reps and weight management. FitNote offers a structured and visually productive interface, enabling users to monitor their progress effectively and stay motivated.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Mobile App</span>
+                        <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">UI/UX</span>
+                        <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Fitness</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-primary hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-primary hover:text-white transition-colors">
+                            <i class="fas fa-external-link-alt text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Smart DL Services Project -->
+                <div class="project-card bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-secondary/50 transition-all duration-300 group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-id-card text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Smart DL Services</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            The proposed system falls under the Government-to-Citizens (G2C) initiative, offering a digital and automated solution for efficient driving license management in India. The traditional licensing process is often time-consuming, error-prone, and requires multiple physical visits to Regional Transport Offices (RTOs). To address these inefficiencies, the Smart Driving License Management System aims to modernize and streamline the entire workflow through a web-based platform.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Government</span>
+                        <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Web Platform</span>
+                        <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Digital Services</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-secondary hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-secondary hover:text-white transition-colors">
+                            <i class="fas fa-external-link-alt text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    A comprehensive overview of my technical expertise and areas of specialization
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="skill-category bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-primary/50 transition-all">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Programming Languages</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">Java</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">Python</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">C++</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="skill-category bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-secondary/50 transition-all">
+                    <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-database text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Databases</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">SQL</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">MongoDB</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks & Tools -->
+                <div class="skill-category bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-accent/50 transition-all">
+                    <div class="w-12 h-12 bg-gradient-to-r from-accent to-primary rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-tools text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Frameworks & Tools</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">Flask</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-300">Git</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Specializations -->
+                <div class="skill-category bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-primary/50 transition-all md:col-span-2 lg:col-span-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-brain text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Areas of Expertise</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-gray-700/50 rounded-lg p-4 text-center">
+                            <i class="fas fa-robot text-primary text-2xl mb-2"></i>
+                            <p class="text-white font-medium">AI-Driven Systems</p>
+                        </div>
+                        <div class="bg-gray-700/50 rounded-lg p-4 text-center">
+                            <i class="fas fa-cloud text-secondary text-2xl mb-2"></i>
+                            <p class="text-white font-medium">Cloud Architecture</p>
+                        </div>
+                        <div class="bg-gray-700/50 rounded-lg p-4 text-center">
+                            <i class="fas fa-layer-group text-accent text-2xl mb-2"></i>
+                            <p class="text-white font-medium">Full Stack Development</p>
+                        </div>
+                        <div class="bg-gray-700/50 rounded-lg p-4 text-center">
+                            <i class="fas fa-network-wired text-primary text-2xl mb-2"></i>
+                            <p class="text-white font-medium">Decentralized Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Let's discuss your next project or collaboration opportunity
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-white">Let's Connect</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                            I'm always excited to work on innovative projects and collaborate with like-minded individuals. Whether you have a project in mind or just want to connect, feel free to reach out!
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium">Email</p>
+                                <p class="text-gray-300">vinit.girdhar@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium">Location</p>
+                                <p class="text-gray-300">Mumbai, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium">Institution</p>
+                                <p class="text-gray-300">SFIT, Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div>
+                        <p class="text-white font-medium mb-4">Follow Me</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-xl p-8">
+                    <!-- Flash Messages -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="mb-6 p-4 rounded-lg {% if category == 'error' %}bg-red-500/20 border border-red-500/50 text-red-300{% else %}bg-green-500/20 border border-green-500/50 text-green-300{% endif %}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    
+                    <form action="{{ url_for('contact') }}" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-white font-medium mb-2">Name</label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                                       placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-white font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                                       placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-white font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required 
+                                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                                   placeholder="Project Inquiry">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-white font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" required 
+                                      class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors resize-none"
+                                      placeholder="Tell me about your project or inquiry..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full group">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2025 Vinit Girdhar. Built with <i class="fas fa-heart text-red-500"></i> using Flask & Tailwind CSS
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
